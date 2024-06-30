@@ -37,13 +37,13 @@ const Header: React.FC = () => {
         sx={{
           "& .MuiDrawer-paper": {
             width: 240,
-            backgroundColor: "#f0f0f0", // Light gray background
-            transition: "all 0.3s ease-in-out", // Smooth transition for all properties
+            backgroundColor: "#f0f0f0",
+            transition: "all 0.3s ease-in-out",
           },
         }}
         SlideProps={{
-          timeout: 300, // Animation duration in milliseconds
-          easing: "ease-in-out", // Animation timing function
+          timeout: 300,
+          easing: "ease-in-out",
         }}
       >
         <DrawerContent handleDrawerToggle={handleDrawerToggle} />

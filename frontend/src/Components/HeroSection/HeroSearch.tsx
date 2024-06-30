@@ -2,8 +2,16 @@ import React from "react";
 import { TextField, InputAdornment, useTheme } from "@mui/material";
 import SearchIcon from "@mui/icons-material/Search";
 
-const HeroSearch: React.FC = () => {
+interface HeroSearchProps {
+  onSearch: (query: string) => void;
+}
+
+const HeroSearch: React.FC<HeroSearchProps> = ({ onSearch }) => {
   const theme = useTheme();
+
+  const handleInputChange = (event: React.ChangeEvent<HTMLInputElement>) => {
+    onSearch(event.target.value);
+  };
 
   return (
     <TextField
@@ -17,8 +25,11 @@ const HeroSearch: React.FC = () => {
           </InputAdornment>
         ),
       }}
+      onChange={handleInputChange}
       sx={{
         maxWidth: "600px",
+        backgroundColor: "white",
+        borderRadius: "4px",
         "& .MuiOutlinedInput-root": {
           "& fieldset": {
             borderColor: theme.palette.primary.main,

@@ -15,6 +15,7 @@ const Theme = createTheme({
     },
     warning: {
       main: "#FABD33",
+      dark: "#F7A000",
     },
     info: {
       main: "#4AA088",
